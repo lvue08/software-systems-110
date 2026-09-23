@@ -106,4 +106,4 @@ Complete all of the following in your notes section.
 - [x] Completed Number list
 - [x] Completed Bold word
 
-[Github](https://github.com/lvue08/software-systems-110/tree/main) 
+[GitHub](https://github.com/lvue08)
