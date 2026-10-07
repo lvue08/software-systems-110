@@ -3,16 +3,6 @@
 //  Beginner JavaScript Lab
 //  Concepts: string, number, boolean, if statement, for loop
 // ============================================================
-
-
-// ---- SECTION 1: BOOLEAN — Day/Night Mode ----
-// A boolean holds one of two values: true or false.
-// We use it here to track whether day mode is ON or OFF.
-
-var isDayMode = false;   // boolean: starts as false (night mode is default)
-
-
-// ---- SECTION 2: FUNCTION — Toggle Day/Night Mode ----
 "use strict"; // Do not remove
 
 
@@ -28,7 +18,7 @@ var isDayMode = false;   // boolean: starts as false (night mode is default)
  * Your mission:
  * Add the correct keyword so isDayMode becomes a proper variable.
  *****************************************************************/
-let isDayMode = false;   // boolean: starts as false (night mode is default)
+isDayMode = false;   // boolean: starts as false (night mode is default)
 
 
 
@@ -38,19 +28,6 @@ let isDayMode = false;   // boolean: starts as false (night mode is default)
 
 function toggleDayNight() {
 
-  // Flip the boolean: if it was false, make it true. If true, make it false.
-  isDayMode = !isDayMode;
-
-  // Get references to the page body and the toggle button
-  var body      = document.getElementById("page-body");
-  var toggleBtn = document.getElementById("toggle-btn");
-
-  // IF STATEMENT: check which mode we're switching to
-  if (isDayMode === true) {
-    // Day mode: add the "day-mode" CSS class to the body
-    body.classList.add("day-mode");
-    toggleBtn.textContent = "☾ Night Mode";
-  } else {
   /*****************************************************************
    * 3. LOGIC FAILURE:
    * Clicking the button does not actually switch between true
@@ -60,7 +37,7 @@ function toggleDayNight() {
    * Fix this line so the boolean is flipped every time the button
    * is clicked.
    *****************************************************************/
-  isDayMode = !isDayMode;
+  isDayMode = isDayMode;
 
   /*****************************************************************
    * 4. CONNECTION FAILURE:
@@ -70,7 +47,7 @@ function toggleDayNight() {
    * Your mission:
    * Check the HTML file and find the correct id for the page body.
    *****************************************************************/
-  const body = document.getElementById("page-body");
+  const body = document.getElementById("pageBody");
   const toggleBtn = document.getElementById("toggle-btn");
 
   /*****************************************************************
@@ -82,7 +59,7 @@ function toggleDayNight() {
    * Replace the incorrect operator with a strict comparison
    * operator.
    *****************************************************************/
-  if (isDayMode === true) {
+  if (isDayMode = true) {
 
     // Day mode: add the "day-mode" CSS class to the body
     body.classList.add("day-mode");
@@ -97,23 +74,13 @@ function toggleDayNight() {
 }
 
 
-// ---- SECTION 3: FUNCTION — Run the Broadcast ----
 
 // ---- PART 3: FUNCTION — Run the Broadcast ----
 // This function runs when the Broadcast button is clicked.
 // It uses a STRING, a NUMBER, and a FOR LOOP.
 
-function runBroadcast() {}
+function runBroadcast() {
 
-  // STRING: grab the text from the message input field
-  // A string is any piece of text, wrapped in quotes when written directly.
-  var message = document.getElementById("message-input").value;
-
-  // NUMBER: grab the count from the number input field
-  // parseInt() converts the text from the input into a whole number.
-  var count = parseInt(document.getElementById("count-input").value);
-
-  // Basic check: make sure count is a valid positive number
   /*****************************************************************
    * 6. INPUT FAILURE:
    * The program is grabbing the input box itself instead of
@@ -122,7 +89,7 @@ function runBroadcast() {}
    * Your mission:
    * Something is missing here. Update this line so the user's message can be read correctly.
    *****************************************************************/
-  const message = document.getElementById("message-input").value;
+  const message = document.getElementById("message-input");
 
   // NUMBER: grab the count from the number input field
   // parseInt() converts the text from the input into a whole number.
@@ -137,24 +104,17 @@ function runBroadcast() {}
    * Your mission:
    * Repair the condition so valid numbers are accepted.
    *****************************************************************/
-  if (isNaN(count) || count < 1) {
+  if (isNaN(count) || count >= 1) {
     alert("Please enter a number greater than 0.");
     return;
   }
 
   // Get the terminal output area so we can write into it
-  var outputArea = document.getElementById("terminal-output");
   const outputArea = document.getElementById("terminal-output");
 
   // Clear any previous output before starting a new broadcast
   outputArea.innerHTML = "";
 
-  // FOR LOOP: repeat the broadcast "count" times
-  // i starts at 1, keeps going while i <= count, and goes up by 1 each time
-  for (var i = 1; i <= count; i++) {
-
-    // Create a new paragraph element for each line of output
-    var line = document.createElement("p");
   /*****************************************************************
    * 8. LOOP FAILURE:
    * The broadcast terminal is not producing the correct number
@@ -163,7 +123,7 @@ function runBroadcast() {}
    * Your mission:
    * Repair the loop condition so every broadcast is displayed.
    *****************************************************************/
-  for (let i = 1; i <= count; i++) {
+  for (let i = 1; i < count; i++) {
 
     // Create a new paragraph element for each line of output
     const line = document.createElement("p");
@@ -175,4 +135,4 @@ function runBroadcast() {}
     // Add the line to the terminal output area
     outputArea.appendChild(line);
   }
-}}
+}
