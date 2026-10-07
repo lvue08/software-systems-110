@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Making Program</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div class="page-layout">
+
+        <aside class="sidebar">
+
+            <h2>Program Rules</h2>
+
+            <div class="rules">
+
+                If Quote 1 is true<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The enemy cannot outsmart you if you are not smart."<br><br>
+
+                Otherwise, if Quote 2 is true<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Stay strapped or get clapped"<br><br>
+
+                Otherwise<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Say "The enemies can not read your mind if you aren't using it."<br><br>
+
+                Always<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Say Sun Tzu, the author of The Art of War
+
+            </div>
+
+        </aside>
+
+        <div class="container">
+
+            <h1>Lance vue</h1>
+
+            <p>
+                Change the boolean variables below and then run the program.
+                The values of these variables determine what message is displayed.
+            </p>
+
+            <h2>Program Variables</h2>
+
+            <p>
+                I walk outside of my home. It's a beautiful fall day in La Crosse, Wisconsin.
+                <br>
+                The sun is shining, then a strange man comes up to me and tells me.
+            </p>
+
+            <div class="variable-container">
+
+                <div class="variable-card">
+
+                    <h3>Quote 1</h3>
+
+                    <p>
+                        Should I say Sun Tzu's quote from The Art of War?
+                    </p>
+
+                    <label for="helloInput">
+                        Set <strong>doISayHello</strong> to:&nbsp;
+                    </label>
+
+                    <select id="helloInput">
+                        <option value="true">true</option>
+                        <option value="false" selected>false</option>
+                    </select>
+
+                </div>
+
+                <div class="variable-card">
+
+                    <h3>Quote 2</h3>
+
+                    <p>
+                        Should I say Sun Tzu's quote from The Art of War?
+                    </p>
+
+                    <label for="goodbyeInput">
+                        Set <strong>doISayGoodbye</strong> to:&nbsp;
+                    </label>
+
+                    <select id="goodbyeInput">
+                        <option value="true">true</option>
+                        <option value="false" selected>false</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button onclick="runProgram()">Run Program</button>
+
+            <h2>Program Output</h2>
+
+            <div id="output">
+                The program output will appear here.
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let doISayHello = false;
+        let doISayGoodbye = false;
+
+        function updateVariables() {
+
+            doISayHello =
+                document.getElementById("helloInput").value == "true";
+
+            doISayGoodbye =
+                document.getElementById("goodbyeInput").value == "true";
+
+        }
+
+        function displayMessages(message, finalMessage) {
+
+            document.getElementById("output").innerHTML =
+                message + "<br>" + "..." + "<br>" + "..." + "<br>" + finalMessage;
+
+        }
+
+        function sayHello() {
+
+            let message;
+            let finalMessage;
+
+            if(doISayHello == true) {
+
+                // Assign a greeting message.
+                message = "The enemy cannot outsmart you if you are not smart.";
+
+            } else if(doISayGoodbye == true) {
+
+                // Assign a goodbye message.
+                message = "Stay strapped or get clapped";
+
+            } else {
+
+                // Assign a default message.
+                message = "The enemies can not read your mind if you aren't using it.";
+
+            }
+
+            // Assign a message that always displays.
+            finalMessage = "Sun Tzu, the author of The Art of War";
+
+            displayMessages(message, finalMessage);
+
+        }
+
+        function runProgram() {
+
+            updateVariables();
+            sayHello();
+
+        }
+
+    </script>
+
+</body>
+</html>
